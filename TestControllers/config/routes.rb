@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :books
   #get 'url/new'
   resources :url, :only => [:show, :new, :create]
-  root :to => redirect('url/new')
-  # root 'welcome#index'
+  #root :to => redirect('url/new')
+   root 'books#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
