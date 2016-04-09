@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :photos
   resources :users
   resources :books
   #get 'url/new'

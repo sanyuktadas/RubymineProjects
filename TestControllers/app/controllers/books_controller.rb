@@ -27,7 +27,9 @@ class BooksController < ApplicationController
     p "*****************************"
     p params
     @book = Book.new(book_params)
- user = @book.users.build
+    @book.user_id=User.last.id
+    p "*******************"
+    p @book
     respond_to do |format|
       if @book.save 
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
@@ -71,6 +73,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:name, :title, :description)
+      params.require(:book).permit(:name, :title, :description,:name,:email)
     end
 end

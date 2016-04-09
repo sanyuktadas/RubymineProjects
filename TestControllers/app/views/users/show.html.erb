@@ -12,7 +12,10 @@
 
 <p>
   <strong>Book:</strong>
-  <%= @user.book %>
+  <%= @user.books.each do |book| %>
+  <%= book.name %>
+  <%= book.description %>
+  <%end %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

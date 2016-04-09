@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.text :name
       t.text :email
-      t.references :book, index: true, foreign_key: true
+      t.integer :age
 
       t.timestamps null: false
     end

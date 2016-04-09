@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20160406073610) do
     t.text     "name"
     t.text     "title"
     t.text     "description"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -24,11 +25,9 @@ ActiveRecord::Schema.define(version: 20160406073610) do
   create_table "users", force: :cascade do |t|
     t.text     "name"
     t.text     "email"
-    t.integer  "book_id"
+    t.integer  "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "users", ["book_id"], name: "index_users_on_book_id"
 
 end

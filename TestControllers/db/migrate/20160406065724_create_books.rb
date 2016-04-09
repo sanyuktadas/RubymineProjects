@@ -4,7 +4,7 @@ class CreateBooks < ActiveRecord::Migration
       t.text :name
       t.text :title
       t.text :description
-
+      t.belongs_to :user
       t.timestamps null: false
     end
   end
